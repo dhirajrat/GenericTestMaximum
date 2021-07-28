@@ -1,39 +1,8 @@
 import java.util.Scanner;
 
-/*
-    Defining Generic Method
+/**
+ *  Generic Max Entity checking Program
  */
-class  Generic <T extends Comparable>
-{
-    public T a;
-    public T b;
-    public T c;
-
-    public Generic(T a, T b, T c) {
-        this.a = a;
-        this.b = b;
-        this.c = c;
-    }
-
-    public T testMax(){
-        T MAX = GenericCompareOperation.testMax(a,b,c);
-        return MAX;
-    }
-}
-
-class GenericCompareOperation {
-    /*
-        Method Comparable Max defined
-     */
-    public static <T extends Comparable> T testMax(T a, T b, T c){
-        T mf;
-        mf = ( a.compareTo(b) == 1 ? a : b);
-        T FMAX;
-        FMAX = ( mf.compareTo(c) == 1 ? mf : c);
-        return FMAX;
-    }
-}
-
 public class GenericCompare {
     public static void main(String[] args){
 
@@ -44,7 +13,6 @@ public class GenericCompare {
         Integer y= new Integer(sc.nextInt());
         Integer z= new Integer(sc.nextInt());
         Integer IMAX = GenericCompareOperation.testMax(x,y,z);
-        System.out.println(IMAX+ " is the Maximum Integer number");
 
         //For Float
         System.out.println("Enter 3 Float numbers to compare");
@@ -52,7 +20,6 @@ public class GenericCompare {
         Float b= new Float(sc.nextFloat());
         Float c= new Float(sc.nextFloat());
         Float FMAX = GenericCompareOperation.testMax(a,b,c);
-        System.out.println(FMAX+ " is the Maximum Float number");
 
         //For String
         System.out.println("Checking MAX between Apple, Banana, Peach");
@@ -60,7 +27,17 @@ public class GenericCompare {
         String q = new String("Banana");
         String r = new String("Peach");
         String SMAX = GenericCompareOperation.testMax(p,q,r);
-        System.out.println(SMAX+ " is the Maximum String");
 
+        //Refactor for more Integer
+        System.out.println("Enter 6 Integer numbers to compare");
+        Scanner sc1 = new Scanner(System.in);
+        Integer x1= new Integer(sc.nextInt());
+        Integer y1= new Integer(sc.nextInt());
+        Integer z1= new Integer(sc.nextInt());
+        Integer x2= new Integer(sc.nextInt());
+        Integer y2= new Integer(sc.nextInt());
+        Integer z2= new Integer(sc.nextInt());
+        Integer IMAX1 = GenericCompareOperation.testMaxArray(x1,y1,z1,x2,y2,z2);
+        System.out.println(IMAX1+ " is the Maximum Integer number");
     }
 }
